@@ -4,17 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Com.Domain.Cookbook
 {
     class Cookbook : ICookbook
     {
+        private int cookbookid;
         private List<IRecipe> recipes;
         private String cookbookname;
-
-        public Cookbook(List<IRecipe> recipes, String cookbookname)
+        
+        public Cookbook(int cookbookid, List<IRecipe> recipes, String cookbookname)
         {
+            this.cookbookid = cookbookid;
             this.recipes = recipes;
             this.cookbookname = cookbookname;
+        }
+        public int GetCookbookID()
+        {
+            return this.cookbookid;
+        }
+
+        public void SetCookbookID(int cookbookid)
+        {
+            this.cookbookid = cookbookid;
         }
         public void AddRecipe(IRecipe recipe)
         {
@@ -35,6 +46,7 @@ namespace Domain
         {
             //need to implement
             //this.recipes.Find(oldrecipe);
+            
             
         }
     }

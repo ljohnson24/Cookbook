@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Com.Domain.Account
 {
     class Contact : IContact
     {
+        int contactid;
         private String address;
         private String email;
         private String fullname;
         private int phone;
 
-        public Contact(String address, String email, String fullname, int phone)
+        public Contact(int contactid,String address, String email, String fullname, int phone)
         {
+            this.contactid = contactid;
             this.address = address;
             this.email = email;
             this.fullname = fullname;
@@ -22,42 +24,52 @@ namespace Domain
         }
         public string GetAddress()
         {
-            throw new NotImplementedException();
+            return this.address;
         }
 
         public string GetEmail()
         {
-            throw new NotImplementedException();
+            return this.email;
         }
 
         public string GetFullName()
         {
-            throw new NotImplementedException();
+            return this.fullname;
         }
 
         public int GetPhone()
         {
-            throw new NotImplementedException();
+            return this.phone;
         }
 
         public void SetAddress(string address)
         {
-            throw new NotImplementedException();
+            this.address = address;
         }
 
         public void SetEmail(string email)
         {
-            throw new NotImplementedException();
+            this.email = email;
         }
 
         public void SetFullName(string fullname)
         {
-            throw new NotImplementedException();
+            this.fullname = fullname;
         }
 
         public void SetPhone(int phone)
         {
-            throw new NotImplementedException();
+            this.phone = phone;
+        }
+
+        public void SetContactID(int contactid)
+        {
+            this.contactid = contactid;
+        }
+
+        public int GetContactID()
+        {
+            return this.contactid;
         }
     }
 }

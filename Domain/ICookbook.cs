@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Com.Domain.Cookbook
 {
     interface ICookbook
     {
+        void SetCookbookID(int cookbookid);
+        int GetCookbookID();
         List<IRecipe> GetRecipes();
         void AddRecipe(IRecipe recipe);
         void DeleteRecipe(IRecipe recipe);

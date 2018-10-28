@@ -3,54 +3,100 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Com.Domain.Review;
 
-namespace Domain
+namespace Com.Domain.Cookbook
 {
     class Recipe : IRecipe
     {
-        public void AddIngredient(IIngredient ingredient)
+        private int recipeid;
+        private String recipename;
+        private String recipedescription;
+        private List<String> recipeinstructions;
+        private List<IReview> reviews;
+        private List<IIngredient> ingredients;
+        
+        // recipe constructor
+        public Recipe(int recipeid, String recipename, String recipedescription, List<String> recipeinstructions, List<IIngredient> ingredients)
         {
-            throw new NotImplementedException();
+            // initialization of attributes
+            this.recipeid = recipeid;
+            this.recipename = recipename;
+            this.recipedescription = recipedescription;
+            this.recipeinstructions = recipeinstructions;
+            this.reviews = new List<IReview>();
+            this.ingredients = ingredients;
         }
 
-        public void AddReview(IReview review)
+        public void SetRecipeID(int recipeid)
         {
-            throw new NotImplementedException();
+            this.recipeid = recipeid;
+        }
+
+        public int GetRecipeID()
+        {
+            return this.recipeid;
+        }
+
+        public void AddIngredient(IIngredient ingredient)
+        {
+            this.ingredients.Add(ingredient);
+        }
+
+        public List<IIngredient> GetIngredients()
+        {
+            return this.ingredients;
         }
 
         public void DeleteIngredient(IIngredient ingredient)
         {
-            throw new NotImplementedException();
+            //provision for deleting ingredient
         }
 
-        public void DeleteReview(IReview )
+        public void AddReview(IReview review)
         {
-            throw new NotImplementedException();
+            this.reviews.Add(review);
         }
 
-        public string GetRecipeDescription()
+        public void DeleteReview(IReview review)
         {
-            throw new NotImplementedException();
-        }
-
-        public string GetRecipeName()
-        {
-            throw new NotImplementedException();
+            //Provisions for delete option - unable to delete a review, reviews are final
+            
         }
 
         public List<IReview> GetReviews()
         {
-            throw new NotImplementedException();
+            return this.reviews;
+        }
+
+        public string GetRecipeDescription()
+        {
+            return this.recipedescription;
         }
 
         public void SetRecipeDescription(string recipedescription)
         {
-            throw new NotImplementedException();
+            this.recipedescription = recipedescription;
         }
 
+        public String GetRecipeName()
+        {
+            return this.recipename;
+        }
+        
         public void SetRecipeName(string recipename)
         {
-            throw new NotImplementedException();
+            this.recipename = recipename;
+        }
+
+        public List<String> GetInstructions()
+        {
+            return this.recipeinstructions;
+        }
+
+        public void SetInstructions(List<String> recipeinstructions)
+        {
+            this.recipeinstructions = recipeinstructions;
         }
     }
 }

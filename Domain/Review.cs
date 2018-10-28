@@ -3,34 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Domain
+using Com.Domain.Account;
+namespace Com.Domain.Review
 {
     class Review : IReview
     {
-        public string GetComment()
+        private int reviewid;
+        private bool rating;
+        private String comment;
+        private IUser author;
+
+        public Review(int reviewid, bool rating, String comment, IUser user)
         {
-            throw new NotImplementedException();
+            this.reviewid = reviewid;
+            this.rating = rating;
+            this.comment = comment;
+            this.author = user;
+        }
+        public void SetUser(IUser user)
+        {
+            this.author = user;
+        }
+
+        public IUser GetUser()
+        {
+            return this.author;
+        }
+        public String GetComment()
+        {
+            return this.comment;
         }
 
         public bool GetRating()
         {
-            throw new NotImplementedException();
+            return this.rating;
         }
 
-        public string GetReviewer(IUser user)
+        public String GetReviewer(IUser user)
         {
-            throw new NotImplementedException();
+            return this.author.GetAccountProfile().GetUsername();
         }
 
-        public void SetComment(string comment)
+        public void SetComment(String comment)
         {
-            throw new NotImplementedException();
+            this.comment = comment;
         }
 
         public void SetRating(bool rating)
         {
-            throw new NotImplementedException();
+            this.rating = rating;
         }
+
     }
 }

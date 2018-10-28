@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Com.Domain.Cookbook
 {
     interface IIngredient
     {
-        String GetItem();
-        void SetItem(String Item);
+        int GetIngredientID();
+        void SetIngredientID(int ingredient);
+        String GetIngredientName();
+        void SetIngredientName(String ingredient);
     }
 }

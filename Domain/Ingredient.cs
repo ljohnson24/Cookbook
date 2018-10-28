@@ -4,19 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Com.Domain.Cookbook
 {
     class Ingredient : IIngredient
     {
+        private String ingredientname;
+        private int ingredientid;
         
-        public string GetItem()
+        public string GetIngredientName()
         {
-            throw new NotImplementedException();
+            return this.ingredientname;
         }
 
-        public void SetItem(string Item)
+        public void SetIngredientName(String ingredientname)
         {
-            throw new NotImplementedException();
+            this.ingredientname = ingredientname;
+        }
+
+        public void SetIngredientID(int ingredientid)
+        {
+            this.ingredientid = ingredientid;
+        }
+
+        public int GetIngredientID()
+        {
+            return this.ingredientid;
         }
     }
 }

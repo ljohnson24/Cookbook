@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Com.Domain.Cookbook;
 
-namespace Domain
+namespace Com.Domain.Account
 {
     class User : IUser
     {
@@ -20,7 +21,9 @@ namespace Domain
         public void DeleteCookbook(ICookbook cookbook)
         {
             //clears the cookbook
-            this.cookbook = new Cookbook();
+            List<IRecipe> temp = new List<IRecipe>();
+            
+            this.cookbook = new Cookbook.Cookbook(1,temp,"");
         }
 
         public IAccountProfile GetAccountProfile()
