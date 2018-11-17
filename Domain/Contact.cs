@@ -8,13 +8,13 @@ namespace Com.Domain.Account
 {
     class Contact : IContact
     {
-        int contactid;
+        private int contactid;
         private String address;
         private String email;
         private String fullname;
-        private int phone;
+        private String phone;
 
-        public Contact(int contactid,String address, String email, String fullname, int phone)
+        public Contact(int contactid,String address, String email, String fullname, String phone)
         {
             this.contactid = contactid;
             this.address = address;
@@ -37,7 +37,7 @@ namespace Com.Domain.Account
             return this.fullname;
         }
 
-        public int GetPhone()
+        public String GetPhone()
         {
             return this.phone;
         }
@@ -57,7 +57,7 @@ namespace Com.Domain.Account
             this.fullname = fullname;
         }
 
-        public void SetPhone(int phone)
+        public void SetPhone(String phone)
         {
             this.phone = phone;
         }

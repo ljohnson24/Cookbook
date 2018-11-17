@@ -12,8 +12,8 @@ namespace Com.Domain.Account
         void SetContactID(int contactid);
         String GetFullName();
         void SetFullName(String fullname);
-        int GetPhone();
-        void SetPhone(int phone);
+        String GetPhone();
+        void SetPhone(String phone);
         String GetEmail();
         void SetEmail(String email);
         String GetAddress();
